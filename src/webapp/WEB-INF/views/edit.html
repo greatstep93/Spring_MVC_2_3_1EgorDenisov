@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Edit user</h1>
-<form action="/edit" th:method="PATCH" th:action="@{/edit}" th:object="${user}">
+<form action="/edit" th:method="POST" th:action="@{${user.userId}}" th:object="${user}">
     <table>
         <tr>
             <td>

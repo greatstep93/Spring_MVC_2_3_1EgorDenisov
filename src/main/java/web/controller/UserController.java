@@ -12,7 +12,6 @@ import web.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import web.model.User;
 
-import javax.validation.Valid;
 
 
 @Controller
@@ -43,9 +42,9 @@ public class UserController {
 //            this.userService.updateUser(user);
 //            return "redirect:/";
 //    }
-    @RequestMapping(value = "edit", method = RequestMethod.PATCH)
-    public String update2(@ModelAttribute("users") User user){
-            this.userService.updateUser(user);
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
+    public String update2(@ModelAttribute("users") User user,@PathVariable int id){
+            this.userService.updateUser(user,id);
         return "redirect:/";
     }
 //    @PostMapping ("/edit")
